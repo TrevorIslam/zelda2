@@ -11,6 +11,17 @@ class Player {
   }
 
   move() {
-    
+    if (reg[LEFT_ARROW]) {
+      this.x-=15;
+    }
+    if (reg[RIGHT_ARROW]) {
+      this.x+=15;
+    }
+    if (reg[UP_ARROW]) {
+      this.y-=15;
+    }
+    if (reg[DOWN_ARROW]) {
+      this.y+=15;
+    }
   }
 }

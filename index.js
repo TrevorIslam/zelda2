@@ -10,6 +10,7 @@ function draw() {
   noStroke();
   background(50);
   player.drawSelf();
+  player.move();
 };
 
 function keyPressed() {
@@ -17,4 +18,8 @@ function keyPressed() {
 };
 function keyReleased() {
   reg[keyCode] = false;
+};
+
+function getKey(name) {
+  return name.charCodeAt(0);
 };
