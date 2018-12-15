@@ -21,7 +21,7 @@ class Sprite {
     if (frameCount % this.frameSpeed === 0) {
       this.frame++;
     }
-    if(this.frame >= 4) {
+    if(this.frame >= this.numFrames) {
       this.frame = 0;
     }
   }

@@ -16,18 +16,22 @@ class Player {
 
     if (reg[LEFT_ARROW]) {
       xvel = -5;
+      yvel = 0;
       this.sprite.animationNumber = 1;
     }
     if (reg[RIGHT_ARROW]) {
       xvel = 5;
+      yvel = 0;
       this.sprite.animationNumber = 2;
     }
     if (reg[UP_ARROW]) {
       yvel = -5;
+      xvel = 0;
       this.sprite.animationNumber = 3;
     }
     if (reg[DOWN_ARROW]) {
       yvel = 5;
+      xvel = 0;
       this.sprite.animationNumber = 0;
     }
     if (xvel == 0 && yvel == 0) {
