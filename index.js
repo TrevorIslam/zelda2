@@ -8,10 +8,11 @@ var reg = {};
 function setup() {
   createCanvas(512,512);
   grass = new Grass();
-  player = new Player(250,250);
+  player = new Player(250,250,32,32);
   for (let i=0;i<16;i++) {
-    newObj(Wall, walls, i * 32, 0);
+    newObj(Wall, walls, i * 32, 0, 32, 32);
   }
+  newObj(Wall, walls, 300,350,32,32)
 };
 
 function draw() {
@@ -56,7 +57,6 @@ function collision (r1, r2) {
 
 function placeFree (xNew, yNew) {
   var temp = {x: xNew, y: yNew, w: player.w, h: player.h};
-
   for(let i = 0; i < walls.length; i++) {
     if (collision(walls[i], temp)) {
       return false;

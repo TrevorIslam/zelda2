@@ -25,6 +25,4 @@ class Sprite {
       this.frame = 0;
     }
   }
-
-
 }
