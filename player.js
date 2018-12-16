@@ -7,7 +7,7 @@ class Player {
   }
 
   drawSelf() {
-    this.sprite.draw(this.x,this.y,64,64);
+    this.sprite.draw(this.x,this.y,32,32);
   }
 
   move() {
@@ -40,7 +40,39 @@ class Player {
     } else {
       this.sprite.frameSpeed = 6;
     }
-    this.x+=xvel;
-    this.y+=yvel;
+    if (xvel > 0) {
+      for (let i = xvel; i > 0; i--) {
+        if (placeFree(this.x + i, this.y)) {
+          this.x += i;
+          break;
+        }
+      }
+    } else if (xvel < 0) {
+      for (let i = xvel; i < 0; i++) {
+        if (placeFree(this.x + i, this.y)) {
+          this.x += i;
+          break;
+        }
+      }
+    }
+    if (yvel > 0) {
+      for (var j = yvel; j > 0; j--) {
+        if (placeFree(this.x, this.y + j)) {
+          this.y += j;
+          break;
+        }
+      }
+    } else if (yvel < 0) {
+      for (var j = yvel; j < 0; j++) {
+        if (placeFree(this.x, this.y + j)) {
+          this.y += j;
+          break;
+        }
+      }
+    }
+  }
+  static update () {
+    player.drawSelf();
+    player.move();
   }
 }
