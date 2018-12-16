@@ -58,7 +58,6 @@ function placeFree (xNew, yNew) {
   var temp = {x: xNew, y: yNew, w: player.w, h: player.h};
 
   for(let i = 0; i < walls.length; i++) {
-    console.log(walls.length);
     if (collision(walls[i], temp)) {
       return false;
     }
